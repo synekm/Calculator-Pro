@@ -1,7 +1,11 @@
 var cislice = "";
+var predtimCislice = "";
 
 function plus() {
-
+    cislice = predtimCislice;
+    
+    parseFloat(predtimCislice) += parseFloat(cislice);
+    predtimCislice = cislice;
 }
 
 function minus() {
