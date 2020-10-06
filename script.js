@@ -1,70 +1,26 @@
 var cislice = "";
 var predtimCislice = "";
+var jeOperator = false;
+var operace = "";
 
-function plus() {
-    cislice = predtimCislice;
-    
-    parseFloat(predtimCislice) += parseFloat(cislice);
-    predtimCislice = cislice;
-}
-
-function minus() {
-
-}
-
-function deleni() {
-
-}
-
-function nasobeni() {
-
-}
-
-function jednaDelenoX() {
-
-}
-
-function naDruhou() {
-
-}
-
-function odmocnina() {
-
-}
-
-function procento() {
-
-}
-
-function c() {
-
-}
-
-function ce() {
-
-}
-
-function del() {
-
-}
-
-function plusLomenoMinus() {
-
-}
-
-function carka() {
-
-}
-
-function vysledek() {
-
-}
-
-function cislo(a) {
-    cislice += a.innerHTML;
+function cislo(cislo) {
+    cislice += cislo.innerHTML;
+    parseFloat(cislice);
     console.log(cislice);
+}
+
+function operator(operator) {
+    operace = operator.innerHTML;
+    jeOperator = true;
+    console.log(operace);
 }
 
 function aktualizacePrikladu() {
     document.getElementById("priklad").value = cislice;
+    if (jeOperator == true) {
+        predtimCislice = cislice;
+        cislice = "";
+    }
+
+    jeOperator = false;
 }
