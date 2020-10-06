@@ -1,15 +1,16 @@
-var cislice = "";
-var predtimCislice = "";
+var cislo = "";
+var predtimCislo = "";
 var jeOperator = false;
 var operace = "";
+var pocetOperaci = 0;
 
-function cislo(cislo) {
-    cislice += cislo.innerHTML;
-    parseFloat(cislice);
-    console.log(cislice);
+function ziskatCislo(cislice) {
+    cislo += cislice.innerHTML;
+    parseFloat(cislo);
+    console.log(cislo);
 }
 
-function operator(operator) {
+function ziskatOperator(operator) {
     operace = operator.innerHTML;
     jeOperator = true;
     console.log(operace);
@@ -18,9 +19,13 @@ function operator(operator) {
 function aktualizacePrikladu() {
     document.getElementById("priklad").value = cislice;
     if (jeOperator == true) {
-        predtimCislice = cislice;
-        cislice = "";
+        predtimCislo = cislo;
+        cislo = "";
+
+        jeOperator = false;
     }
 
-    jeOperator = false;
+    if (cislo != "" && predtimCislo != "") {
+
+    }
 }
