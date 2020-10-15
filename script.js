@@ -14,6 +14,7 @@ function ziskatCislo(cislice) {
 function ziskatOperator(operator) {
     operace = operator.innerHTML;
     jeOperator = true;
+    pocetOperaci += 1;
     
     if (predtimCislo == "") {
         predtimCislo = cislo;
@@ -24,4 +25,40 @@ function ziskatOperator(operator) {
 
     console.log("predchozi " + predtimCislo);
     console.log("operator " + operace);
+}
+
+function delejOperaci() {
+    if (pocetOperaci >= 1) {
+        switch(operace) {
+
+            case "":
+                break;
+            case "":
+                break;
+            case "":
+                break;
+            case "":
+                break;
+            case "":
+                break;
+            case "":
+                break;
+            case "":
+                break;
+            case "":
+                break;
+            case "":
+                break;
+            case "":
+                break;
+            case "":
+                break;
+            case "":
+                break;
+            case "":
+                break;
+            case "":
+                break;
+        }
+    }
 }
