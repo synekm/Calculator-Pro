@@ -1,6 +1,5 @@
 var cislo = "";
 var predtimCislo = "";
-var jeOperator = false;
 var operace = "";
 var staraOperace = "";
 var pocetOperaci = 0;
@@ -12,53 +11,98 @@ function ziskatCislo(cislice) {
 }
 
 function ziskatOperator(operator) {
+    staraOperace = operace;
+    operace = "";
+
     operace = operator.innerHTML;
-    jeOperator = true;
     pocetOperaci += 1;
-    
-    if (predtimCislo == "") {
-        predtimCislo = cislo;
+
+    predtimCislo = cislo;
+    if (staraOperace == "/" || staraOperace == "*" || staraOperace == "-" || staraOperace == "+" || staraOperace == "=") {
         cislo = "";
     }
-
-    document.getElementById("priklad").value = "";
 
     console.log("predchozi " + predtimCislo);
     console.log("operator " + operace);
 }
 
 function delejOperaci() {
-    if (pocetOperaci >= 1) {
-        switch(operace) {
+    if (pocetOperaci >= 2) {
+        switch (staraOperace) {
 
-            case "":
+            case "/":
+                cislo = predtimCislo / cislo;
                 break;
-            case "":
+
+            case "*":
+                cislo = predtimCislo * cislo;
                 break;
-            case "":
+
+            case "-":
+                cislo = predtimCislo - cislo;
                 break;
-            case "":
+
+            case "+":
+                cislo = predtimCislo + cislo;
                 break;
-            case "":
-                break;
-            case "":
-                break;
-            case "":
-                break;
-            case "":
-                break;
-            case "":
-                break;
-            case "":
-                break;
-            case "":
-                break;
-            case "":
-                break;
-            case "":
-                break;
-            case "":
+
+            case "=":
+                cislo = cislo;
                 break;
         }
+
+        pocetOperaci = 0;
+        document.getElementById("priklad").value = cislo;
     }
+
+    if (pocetOperaci >= 1) {
+        switch (staraOperace) {
+            case "%":
+                break;
+
+            case "CE":
+                cislo = "";
+                predtimCislo = "";
+                pocetOperaci = 0;
+                operace = 0;
+                staraOperace = 0;
+                document.getElementById("priklad").value = "";
+                break;
+
+            case "C":
+                cislo = "";
+                predtimCislo = "";
+                pocetOperaci = 0;
+                operace = 0;
+                staraOperace = 0;
+                document.getElementById("priklad").value = "";
+                break;
+
+            case "DEL":
+                cislo = "";
+                break;
+
+            case ",":
+                toString(predtimCislo)
+                toString(cislo)
+                cislo = predtimCislo + ",";
+                break;
+
+            case "1/x":
+                cislo = 1 / predtimCislo;
+                break;
+
+            case "x^2":
+                cislo = predtimCislo * predtimCislo;
+                break;
+
+            case "-/x":
+
+                break;
+        }
+
+        pocetOperaci = 0;
+        document.getElementById("priklad").value = cislo;
+    }
+
 }
