@@ -4,9 +4,8 @@ var operace = "";
 var staraOperace = "";
 var pocetOperaci = 0;
 
-function ziskatCislo(cislice) {
+function ziskatPriklad(cislice) {
     cislo += cislice.innerHTML;
-    parseFloat(cislo);
     document.getElementById("priklad").value = cislo;
 }
 
@@ -80,12 +79,6 @@ function delejOperaci() {
 
             case "DEL":
                 cislo = "";
-                break;
-
-            case ",":
-                toString(predtimCislo)
-                toString(cislo)
-                cislo = predtimCislo + ",";
                 break;
 
             case "1/x":
