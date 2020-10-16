@@ -43,3 +43,9 @@ function plusMinus() {
     }
     document.getElementById("priklad").value = priklad;
 }
+
+function procento() {
+    priklad = eval(priklad);
+    priklad = priklad / 100;
+    document.getElementById("priklad").value = priklad;
+}
