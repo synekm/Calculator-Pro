@@ -4,13 +4,6 @@ require_once "config.php";
 
 $db = mysqli_connect(DBHOST, DBUSER, DBPASS, DBNAME);
 
-if (!$db) {
-    echo "Error: Unable to connect to MySQL." . PHP_EOL;
-    echo "Debugging errno: " . mysqli_connect_errno() . PHP_EOL;
-    echo "Debugging error: " . mysqli_connect_error() . PHP_EOL;
-    exit;
-}
-
 if(isset($_GET["cislice"]))
 {
     $cislice = $_GET["cislice"];

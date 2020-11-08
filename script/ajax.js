@@ -20,6 +20,9 @@ function odeslat(a) {
     if (a.innerHTML == 0 || a.innerHTML == 1 || a.innerHTML == 2 || a.innerHTML == 3 || a.innerHTML == 4 || a.innerHTML == 5 || a.innerHTML == 6 || a.innerHTML == 7 || a.innerHTML == 8 || a.innerHTML == 9) {
         cislice = a.innerHTML;
     }
+    if (a.innerHTML == "CE" || a.innerHTML == "C") {
+        cislice = "";
+    }
 
     console.log(cislice);
 
@@ -30,8 +33,13 @@ function odeslat(a) {
         if(this.readyState == 4 && this.status == 200) {
             let odpoved = JSON.parse(this.responseText);
 
+            console.log(odpoved);
+
+            _statistika.innerHTML = "";
+
             let html = "";
-            html += "<p>Číslice " + odpoved[1].cislice + " : " + odpoved[1] + "</p>";
+            html += "<p>Číslice " + odpoved[0].cislice + " : " + odpoved[0].pocet + "</p>";
+            html += "<p>Číslice " + odpoved[1].cislice + " : " + odpoved[1].pocet + "</p>";
             html += "<p>Číslice " + odpoved[2].cislice + " : " + odpoved[2].pocet + "</p>";
             html += "<p>Číslice " + odpoved[3].cislice + " : " + odpoved[3].pocet + "</p>";
             html += "<p>Číslice " + odpoved[4].cislice + " : " + odpoved[4].pocet + "</p>";
@@ -45,5 +53,10 @@ function odeslat(a) {
         }
     };
     xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    xhr.send("cislice=" + JSON.stringify(cislice));
+    if (cislice != "") {
+        xhr.send("cislice=" + cislice);
+    }
+    if (cislice == "") {
+        xhr.send();
+    }
 }
