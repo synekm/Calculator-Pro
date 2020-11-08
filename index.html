@@ -15,33 +15,37 @@
         <header>
             <h1>Calculator Pro (s GUI)</h1>
         </header>
-        <main>
-            <input readonly type="text" id="priklad">
-            <div id="tlacitka">
-                <button onclick="procento();">%</button>
-                <button onclick="vymazat();">CE</button>
-                <button onclick="vymazat();">C</button>
-                <button onclick="vymazat();">DEL</button>
-                <button onclick="jednaDelenoX();">1/x</button>
-                <button onclick="naDruhou();">x^2</button>
-                <button onclick="druhaOdmocnina()">2-/x</button>
-                <button onclick="ziskatPriklad(this);">/</button>
-                <button onclick="ziskatPriklad(this);">7</button>
-                <button onclick="ziskatPriklad(this);">8</button>
-                <button onclick="ziskatPriklad(this);">9</button>
-                <button onclick="ziskatPriklad(this);">*</button>
-                <button onclick="ziskatPriklad(this);">4</button>
-                <button onclick="ziskatPriklad(this);">5</button>
-                <button onclick="ziskatPriklad(this);">6</button>
-                <button onclick="ziskatPriklad(this);">-</button>
-                <button onclick="ziskatPriklad(this);">1</button>
-                <button onclick="ziskatPriklad(this);">2</button>
-                <button onclick="ziskatPriklad(this);">3</button>
-                <button onclick="ziskatPriklad(this);">+</button>
-                <button onclick="plusMinus();">+/-</button>
-                <button onclick="ziskatPriklad(this);">0</button>
-                <button onclick="ziskatPriklad(this);">.</button>
-                <button onclick="ziskatVysledek();">=</button>
+        <main onload="nastavit()">
+            <div id="kalkulacka">
+                <input readonly type="text" id="priklad">
+                <div id="tlacitka">
+                    <button onclick="procento();">%</button>
+                    <button onclick="vymazat();">CE</button>
+                    <button onclick="vymazat();">C</button>
+                    <button onclick="vymazat();">DEL</button>
+                    <button onclick="jednaDelenoX();">1/x</button>
+                    <button onclick="naDruhou();">x^2</button>
+                    <button onclick="druhaOdmocnina()">2-/x</button>
+                    <button onclick="ziskatPriklad(this);">/</button>
+                    <button id="7" onclick="ziskatPriklad(this);">7</button>
+                    <button id="8" onclick="ziskatPriklad(this);">8</button>
+                    <button id="9" onclick="ziskatPriklad(this);">9</button>
+                    <button onclick="ziskatPriklad(this);">*</button>
+                    <button id="4" onclick="ziskatPriklad(this);">4</button>
+                    <button id="5" onclick="ziskatPriklad(this);">5</button>
+                    <button id="6" onclick="ziskatPriklad(this);">6</button>
+                    <button onclick="ziskatPriklad(this);">-</button>
+                    <button id="1" onclick="ziskatPriklad(this);">1</button>
+                    <button id="2" onclick="ziskatPriklad(this);">2</button>
+                    <button id="3" onclick="ziskatPriklad(this);">3</button>
+                    <button onclick="ziskatPriklad(this);">+</button>
+                    <button onclick="plusMinus();">+/-</button>
+                    <button id="0" onclick="ziskatPriklad(this);">0</button>
+                    <button onclick="ziskatPriklad(this);">.</button>
+                    <button onclick="ziskatVysledek();">=</button>
+                </div>
+            </div>
+            <div id="statistika">
             </div>
         </main>
         <footer>
