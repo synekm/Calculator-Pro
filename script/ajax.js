@@ -15,10 +15,11 @@ function nastavit() {
 }
 
 function odeslat(a) {
-    let cislice
+    let cislice = 0;
 
-    if (a.value == 0 || a.value == 1 || a.value == 2 || a.value == 3 || a.value == 4 || a.value == 5 || a.value == 6 || a.value == 7 || a.value == 8 || a.value == 9)
+    if (a.value == 0 || a.value == 1 || a.value == 2 || a.value == 3 || a.value == 4 || a.value == 5 || a.value == 6 || a.value == 7 || a.value == 8 || a.value == 9) {
         cislice = a.value;
+    }
 
     let xhr = new XMLHttpRequest();
 
@@ -29,7 +30,16 @@ function odeslat(a) {
             let odpoved = JSON.parse(this.responseText);
 
             let html = "";
-            html += "<p>Cislice : " + odpoved["jmeno"] + "</p>";
+            html += "<p>Cislice " + odpoved[1].cislice + " : " + odpoved[1].pocet + "</p>";
+            html += "<p>Cislice " + odpoved[2].cislice + " : " + odpoved[2].pocet + "</p>";
+            html += "<p>Cislice " + odpoved[3].cislice + " : " + odpoved[3].pocet + "</p>";
+            html += "<p>Cislice " + odpoved[4].cislice + " : " + odpoved[4].pocet + "</p>";
+            html += "<p>Cislice " + odpoved[5].cislice + " : " + odpoved[5].pocet + "</p>";
+            html += "<p>Cislice " + odpoved[6].cislice + " : " + odpoved[6].pocet + "</p>";
+            html += "<p>Cislice " + odpoved[7].cislice + " : " + odpoved[7].pocet + "</p>";
+            html += "<p>Cislice " + odpoved[8].cislice + " : " + odpoved[8].pocet + "</p>";
+            html += "<p>Cislice " + odpoved[9].cislice + " : " + odpoved[9].pocet + "</p>";
+            html += "<p>Cislice " + odpoved[10].cislice + " : " + odpoved[10].pocet + "</p>";
 
             _statistika.innerHTML = html;
         }
