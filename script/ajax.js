@@ -11,7 +11,7 @@ function odeslat(a) {
         cislice = a.innerHTML;
     };
     if (a.innerHTML == "CE" || a.innerHTML == "C") {
-        cislice = "";
+        cislice = null;
     };
 
     console.log(cislice);
@@ -41,10 +41,10 @@ function odeslat(a) {
         };
     };
     xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    if (cislice != "") {
-        xhr.send("cislice=" + 1);
+    if (cislice != null) {
+        xhr.send("cislice=" + parseInt(cislice));
     };
-    if (cislice == "") {
+    if (cislice == null) {
         xhr.send();
     };
 }
