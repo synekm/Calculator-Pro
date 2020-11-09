@@ -15,14 +15,14 @@ function nastavit() {
 }
 
 function odeslat(a) {
-    let cislice = "";
+    let cislice = 0;
 
     if (a.innerHTML == 0 || a.innerHTML == 1 || a.innerHTML == 2 || a.innerHTML == 3 || a.innerHTML == 4 || a.innerHTML == 5 || a.innerHTML == 6 || a.innerHTML == 7 || a.innerHTML == 8 || a.innerHTML == 9) {
         cislice = a.innerHTML;
-    }
+    };
     if (a.innerHTML == "CE" || a.innerHTML == "C") {
         cislice = "";
-    }
+    };
 
     console.log(cislice);
 
@@ -34,8 +34,6 @@ function odeslat(a) {
             let odpoved = JSON.parse(this.responseText);
 
             console.log(odpoved);
-
-            _statistika.innerHTML = "";
 
             let html = "";
             html += "<p>Číslice " + odpoved[0].cislice + " : " + odpoved[0].pocet + "</p>";
@@ -54,9 +52,9 @@ function odeslat(a) {
     };
     xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     if (cislice != "") {
-        xhr.send("cislice=" + cislice);
-    }
+        xhr.send("cislice=" + parseInt(cislice));
+    };
     if (cislice == "") {
         xhr.send();
-    }
+    };
 }
