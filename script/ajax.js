@@ -1,16 +1,6 @@
-var _nula, _jedna, _dva, _tri, _ctyri, _pet, _sest, _sedm, _osm, _devet, _statistika;
+var _statistika;
 
 function nastavit() {
-    _nula = document.getElementById("0");
-    _jedna = document.getElementById("1");
-    _dva = document.getElementById("2");
-    _tri = document.getElementById("3");
-    _ctyri = document.getElementById("4");
-    _pet = document.getElementById("5");
-    _sest = document.getElementById("6");
-    _sedm = document.getElementById("7");
-    _osm = document.getElementById("8");
-    _devet = document.getElementById("9");
     _statistika = document.getElementById("statistika");
 }
 
@@ -48,11 +38,11 @@ function odeslat(a) {
             html += "<p>Číslice " + odpoved[9].cislice + " : " + odpoved[9].pocet + "</p>";
 
             _statistika.innerHTML = html;
-        }
+        };
     };
     xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     if (cislice != "") {
-        xhr.send("cislice=" + parseInt(cislice));
+        xhr.send("cislice=" + 1);
     };
     if (cislice == "") {
         xhr.send();
