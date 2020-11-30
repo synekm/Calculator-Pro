@@ -11,7 +11,7 @@
     <title>Calculator Pro</title>
 </head>
 
-<body onload="nastavit();">
+<body>
     <div id="container">
         <header>
             <h1>Calculator Pro (s GUI)</h1>
@@ -21,27 +21,27 @@
                 <input readonly type="text" id="priklad">
                 <div id="tlacitka">
                     <button onclick="procento();">%</button>
-                    <button onclick="vymazat(); odeslat(this);">CE</button>
-                    <button onclick="vymazat(); odeslat(this);">C</button>
+                    <button class="vymazat" onclick="vymazat();">CE</button>
+                    <button class="vymazat" onclick="vymazat();">C</button>
                     <button onclick="vymazat();">DEL</button>
                     <button onclick="jednaDelenoX();">1/x</button>
                     <button onclick="naDruhou();">x^2</button>
                     <button onclick="druhaOdmocnina()">2-/x</button>
                     <button onclick="ziskatPriklad(this);">/</button>
-                    <button onclick="ziskatPriklad(this); odeslat(this);">7</button>
-                    <button onclick="ziskatPriklad(this); odeslat(this);">8</button>
-                    <button onclick="ziskatPriklad(this); odeslat(this);">9</button>
+                    <button class="cislice" onclick="ziskatPriklad(this);">7</button>
+                    <button class="cislice" onclick="ziskatPriklad(this);">8</button>
+                    <button class="cislice" onclick="ziskatPriklad(this);">9</button>
                     <button onclick="ziskatPriklad(this);">*</button>
-                    <button onclick="ziskatPriklad(this); odeslat(this);">4</button>
-                    <button onclick="ziskatPriklad(this); odeslat(this);">5</button>
-                    <button onclick="ziskatPriklad(this); odeslat(this);">6</button>
+                    <button class="cislice" onclick="ziskatPriklad(this);">4</button>
+                    <button class="cislice" onclick="ziskatPriklad(this);">5</button>
+                    <button class="cislice" onclick="ziskatPriklad(this);">6</button>
                     <button onclick="ziskatPriklad(this);">-</button>
-                    <button onclick="ziskatPriklad(this); odeslat(this);">1</button>
-                    <button onclick="ziskatPriklad(this); odeslat(this);">2</button>
-                    <button onclick="ziskatPriklad(this); odeslat(this);">3</button>
+                    <button class="cislice" onclick="ziskatPriklad(this);">1</button>
+                    <button class="cislice" onclick="ziskatPriklad(this);">2</button>
+                    <button class="cislice" onclick="ziskatPriklad(this);">3</button>
                     <button onclick="ziskatPriklad(this);">+</button>
                     <button onclick="plusMinus();">+/-</button>
-                    <button onclick="ziskatPriklad(this); odeslat(this);">0</button>
+                    <button class="cislice" onclick="ziskatPriklad(this);">0</button>
                     <button onclick="ziskatPriklad(this);">.</button>
                     <button onclick="ziskatVysledek();">=</button>
                 </div>
