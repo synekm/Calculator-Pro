@@ -1,7 +1,7 @@
 var _statistika;
 
 function nastavit() {
-    _statistika = document.getElementById("statistika");
+    _statistika = $("#statistika");
 }
 
 function odeslat(a) {
@@ -69,5 +69,8 @@ function odeslat(a) {
         };
         xhr.send();
     };
-
 }
+
+$(document).ready(function() {
+    statistika = $("#statistika");
+})
