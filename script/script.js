@@ -1,51 +1,58 @@
-var priklad = "";
+$(document).ready(function() {
+    $(".vymazat").click(function() {
+        priklad = "";
+        $("#priklad").val(priklad);
+    });
 
-function ziskatPriklad(cast) {
-    priklad += cast.innerHTML;
-    document.getElementById("priklad").value = priklad;
-}
+    $(".cislice, .znak").click(function() {
+        priklad = $("#priklad").val();
+        priklad += $(this).html();
+        $("#priklad").val(priklad);
+    });
 
-function ziskatVysledek() {
-    priklad = eval(priklad);
-    document.getElementById("priklad").value = priklad;
-}
+    $("#rovnase").click(function() {
+        priklad = $("#priklad").val();
+        priklad = eval(priklad);
+        $("#priklad").val(priklad);
+    });
 
-function vymazat() {
-    priklad = "";
-    document.getElementById("priklad").value = priklad;
-}
+    $("#plusminus").click(function() {
+        priklad = $("#priklad").val();
+        priklad = eval(priklad);
+        if (priklad > 0) {
+            priklad = priklad - (priklad * 2);
+        }
+        else {
+            priklad = priklad - (priklad * 2);
+        }
+        $("#priklad").val(priklad);
+    });
 
-function naDruhou() {
-    priklad = eval(priklad);
-    priklad = priklad * priklad;
-    document.getElementById("priklad").value = priklad;
-}
+    $("#procento").click(function() {
+        priklad = $("#priklad").val();
+        priklad = eval(priklad);
+        priklad = priklad / 100;
+        $("#priklad").val(priklad);
+    });
 
-function jednaDelenoX() {
-    priklad = eval(priklad);
-    priklad = 1 / priklad;
-    document.getElementById("priklad").value = priklad;
-}
+    $("#druhaodmocnina").click(function() {
+        priklad = $("#priklad").val();
+        priklad = eval(priklad);
+        priklad = Math.sqrt(priklad);
+        $("#priklad").val(priklad);
+    });
 
-function druhaOdmocnina() {
-    priklad = eval(priklad);
-    priklad = Math.sqrt(priklad);
-    document.getElementById("priklad").value = priklad;
-}
+    $("#nadruhou").click(function() {
+        priklad = $("#priklad").val();
+        priklad = eval(priklad);
+        priklad = priklad * priklad;
+        $("#priklad").val(priklad);
+    });
 
-function plusMinus() {
-    priklad = eval(priklad);
-    if (priklad > 0) {
-        priklad = priklad - (priklad * 2);
-    }
-    else {
-        priklad = priklad - (priklad * 2);
-    }
-    document.getElementById("priklad").value = priklad;
-}
-
-function procento() {
-    priklad = eval(priklad);
-    priklad = priklad / 100;
-    document.getElementById("priklad").value = priklad;
-}
+    $("#jednadelenox").click(function() {
+        priklad = $("#priklad").val();
+        priklad = eval(priklad);
+        priklad = 1 / priklad;
+        $("#priklad").val(priklad);
+    });
+});
